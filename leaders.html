@@ -4,55 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مجلس القيادة الحالي | جوالة علوم</title>
-    
     <link rel="stylesheet" href="style.css">
-    
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/all.min.css">
-
     <style>
-        /* تنسيقات خاصة بصفحة القادة فقط ولا تتعارض مع الموحد */
-        .leadership-wrapper {
-            padding: 50px 8%;
-        }
+        /* حاوية الصفحة */
+        .leadership-wrapper { padding: 50px 8%; }
 
+        /* تعديل كارت القائد الرئيسي */
         .top-leader-row {
             display: flex;
             justify-content: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .leader-card.main-leader {
-            max-width: 400px;
+            max-width: 450px;
             width: 100%;
             border: 2px solid var(--gold);
-            background: rgba(241, 196, 15, 0.05);
+            background: rgba(241, 196, 15, 0.08);
+            box-shadow: 0 10px 30px rgba(241, 196, 15, 0.1);
         }
 
+        /* شبكة القادة المساعدين */
         .sub-leaders-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
 
         .leader-card {
             background: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 30px;
+            border-radius: 25px;
+            padding: 35px 25px;
             text-align: center;
-            transition: 0.4s ease;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .leader-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-12px);
             border-color: var(--purple);
+            box-shadow: 0 15px 35px rgba(108, 92, 231, 0.2);
         }
 
         .img-wrapper {
-            width: 130px;
-            height: 130px;
-            margin: 0 auto 15px;
+            width: 140px; height: 140px;
+            margin: 0 auto 20px;
             border-radius: 50%;
             border: 3px solid var(--gold);
             padding: 5px;
@@ -61,34 +62,46 @@
         }
 
         .img-wrapper img {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             border-radius: 50%;
             object-fit: cover;
         }
 
         .leader-info h3 {
             color: var(--gold);
-            font-size: 1.4rem;
-            margin-bottom: 5px;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
         }
 
         .leader-info .rank {
-            color: #ccc;
-            font-weight: bold;
+            color: #bbb;
+            font-weight: 700;
+            margin-bottom: 20px;
             display: block;
-            margin-bottom: 15px;
         }
 
         .contact-info {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 15px;
+            padding-top: 20px;
             text-align: right;
-            font-size: 0.9rem;
         }
 
-        .contact-info p { margin-bottom: 5px; color: #eee; }
-        .contact-info i { color: var(--gold); margin-left: 8px; }
+        .contact-info a {
+            text-decoration: none;
+            color: #eee;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+
+        .contact-info a:hover { color: var(--gold); }
+        .contact-info i { color: var(--gold); margin-left: 10px; width: 20px; text-align: center; }
+
+        @media (max-width: 768px) {
+            .leadership-wrapper { padding: 30px 5%; }
+            .leader-info h3 { font-size: 1.3rem; }
+        }
     </style>
 </head>
 <body>
@@ -105,21 +118,21 @@
 
     <header class="page-header">
         <h1>مجلس القيادة الحالي</h1>
-        <p>الهيكل الإداري لعشيرة الجوالة</p>
+        <p>الهيكل الإداري لعشيرة الجوالة بالكلية</p>
     </header>
 
     <section class="leadership-wrapper">
         <div class="top-leader-row">
             <div class="leader-card main-leader">
-                <div class="img-wrapper" style="width: 150px; height: 150px;">
+                <div class="img-wrapper" style="width: 160px; height: 160px;">
                     <img src="main_leader.jpg" alt="قائد العشيرة">
                 </div>
                 <div class="leader-info">
-                    <h3 style="font-size: 1.8rem;">ق/ اسم قائد العشيرة</h3>
-                    <span class="rank">قائد العشيرة</span>
+                    <h3>ق/ اسم القائد هنا</h3>
+                    <span class="rank">قائد عشيرة جوالة علوم</span>
                     <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> 01xxxxxxxxx</p>
-                        <p><i class="fas fa-envelope"></i> leader@science.asu.edu.eg</p>
+                        <a href="tel:01000000000"><i class="fas fa-phone"></i> 01000000000</a>
+                        <a href="mailto:leader@science.asu.edu.eg"><i class="fas fa-envelope"></i> البريد الإلكتروني</a>
                     </div>
                 </div>
             </div>
@@ -127,47 +140,39 @@
 
         <div class="sub-leaders-grid">
             <div class="leader-card">
-                <div class="img-wrapper"><img src="sub1.jpg" alt="أمين السر"></div>
-                <div class="leader-info">
-                    <h3>ق/ الاسم هنا</h3>
-                    <span class="rank">أمين سر العشيرة</span>
-                    <div class="contact-info"><p><i class="fas fa-phone"></i> 01xxxxxxxxx</p></div>
+                <div>
+                    <div class="img-wrapper"><img src="sub1.jpg" alt=""></div>
+                    <div class="leader-info">
+                        <h3>ق/ الاسم هنا</h3>
+                        <span class="rank">أمين سر العشيرة</span>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:01000000000"><i class="fas fa-phone"></i> 01000000000</a>
                 </div>
             </div>
 
             <div class="leader-card">
-                <div class="img-wrapper"><img src="sub2.jpg" alt="أمين الصندوق"></div>
-                <div class="leader-info">
-                    <h3>ق/ الاسم هنا</h3>
-                    <span class="rank">أمين الصندوق</span>
-                    <div class="contact-info"><p><i class="fas fa-phone"></i> 01xxxxxxxxx</p></div>
+                <div>
+                    <div class="img-wrapper"><img src="sub2.jpg" alt=""></div>
+                    <div class="leader-info">
+                        <h3>ق/ الاسم هنا</h3>
+                        <span class="rank">أمين الصندوق</span>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:01000000000"><i class="fas fa-phone"></i> 01000000000</a>
                 </div>
             </div>
 
-            <div class="leader-card">
-                <div class="img-wrapper"><img src="sub3.jpg" alt="مسئول التدريب"></div>
-                <div class="leader-info">
-                    <h3>ق/ الاسم هنا</h3>
-                    <span class="rank">مسئول التدريب</span>
-                    <div class="contact-info"><p><i class="fas fa-phone"></i> 01xxxxxxxxx</p></div>
-                </div>
             </div>
-
-            <div class="leader-card">
-                <div class="img-wrapper"><img src="sub4.jpg" alt="مسئول العهدة"></div>
-                <div class="leader-info">
-                    <h3>ق/ الاسم هنا</h3>
-                    <span class="rank">مسئول العهدة</span>
-                    <div class="contact-info"><p><i class="fas fa-phone"></i> 01xxxxxxxxx</p></div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <footer>
-        <p>عشيرة جوالة كلية العلوم - جامعة عين شمس &copy; 2026</p>
+        <p style="text-align: center; color: var(--gold); padding: 30px;">عشيرة جوالة كلية العلوم - جامعة عين شمس &copy; 2026</p>
     </footer>
 
 </body>
 </html>
  
+
