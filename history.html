@@ -54,7 +54,7 @@
         }
 
         .year-header h2 {
-            font-size: 3.5rem;
+            font-size: clamp(2.5rem, 8vw, 3.5rem); /* خط مرن للموبايل */
             color: var(--gold);
             font-weight: 900;
             text-align: center;
@@ -81,7 +81,6 @@
             padding: 20px;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.1);
-            transition: 0.3s;
         }
 
         .history-card img {
@@ -92,7 +91,7 @@
             object-fit: cover;
         }
 
-        /* --- تنسيق قائمة الهبوط (الإنجازات) --- */
+        /* --- قائمة الهبوط (الإنجازات) المحدثة --- */
         .achievements-toggle {
             background: transparent;
             color: var(--gold);
@@ -114,19 +113,14 @@
             color: var(--dark);
         }
 
-        .achievements-toggle i {
-            transition: 0.4s;
-        }
-
-        .achievements-toggle.active i {
-            transform: rotate(180deg);
-        }
+        .achievements-toggle i { transition: 0.4s; }
+        .achievements-toggle.active i { transform: rotate(180deg); }
 
         .achievements-box {
             width: 100%;
-            max-height: 0;
+            max-height: 0; /* تحكم عن طريق JS */
             overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: max-height 0.5s ease-in-out, opacity 0.3s ease;
             background: rgba(108, 92, 231, 0.05);
             border-radius: 20px;
             opacity: 0;
@@ -134,11 +128,10 @@
         }
 
         .achievements-box.open {
-            max-height: 1000px; /* القيمة القصوى للطول */
-            padding: 25px;
             opacity: 1;
             margin-top: 20px;
             border: 1px solid rgba(241, 196, 15, 0.2);
+            padding: 25px; /* سيتم تفعيله عند الفتح */
         }
 
         .achievements-list {
@@ -153,12 +146,18 @@
             color: #eee;
             font-size: 0.95rem;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 10px;
+            text-align: right;
         }
 
-        .achievements-list li i {
-            color: var(--gold);
+        .achievements-list li i { color: var(--gold); margin-top: 5px; }
+
+        /* تعديلات الموبايل الإضافية */
+        @media (max-width: 768px) {
+            .year-section { padding: 25px 15px; }
+            .achievements-list { grid-template-columns: 1fr; }
+            .achievements-box.open { padding: 20px 15px; }
         }
 
         #no-results { text-align: center; display: none; padding: 50px; font-size: 1.5rem; color: #aaa; }
@@ -210,9 +209,9 @@
 
                 <div class="achievements-box">
                     <ul class="achievements-list">
-                        <li><i class="fas fa-trophy"></i> المركز الأول في التقييم الكشفي العام.</li>
-                        <li><i class="fas fa-star"></i> تنفيذ مبادرة "جوالة أخضر" للتشجير.</li>
-                        <li><i class="fas fa-bullseye"></i> الفوز في مسابقة الابتكار العلمي للجامعة.</li>
+                        <li><i class="fas fa-trophy"></i> المركز الأول في التقييم الكشفي العام لجامعة عين شمس.</li>
+                        <li><i class="fas fa-star"></i> تنفيذ مبادرة "جوالة أخضر" للتشجير داخل أسوار الكلية.</li>
+                        <li><i class="fas fa-bullseye"></i> الفوز في مسابقة الابتكار العلمي والمهارات الفنية.</li>
                     </ul>
                 </div>
             </div>
@@ -240,8 +239,8 @@
 
                 <div class="achievements-box">
                     <ul class="achievements-list">
-                        <li><i class="fas fa-trophy"></i> درع التميز في الأنشطة الثقافية.</li>
-                        <li><i class="fas fa-star"></i> تنظيم المهرجان الكشفي الخمسين للكلية.</li>
+                        <li><i class="fas fa-trophy"></i> درع التميز في الأنشطة الثقافية والمجتمعية.</li>
+                        <li><i class="fas fa-star"></i> تنظيم المهرجان الكشفي اليوبيلي للكلية.</li>
                     </ul>
                 </div>
             </div>
@@ -255,20 +254,24 @@
     </footer>
 
     <script>
-        // دالة فتح وإغلاق الإنجازات
         function toggleAchievements(button) {
             const box = button.nextElementSibling;
-            box.classList.toggle('open');
-            button.classList.toggle('active');
-
-            if (box.classList.contains('open')) {
+            
+            if (!box.classList.contains('open')) {
+                box.classList.add('open');
+                // حساب الارتفاع الحقيقي للمحتوى لضمان عدم تآكله في الموبايل
+                box.style.maxHeight = box.scrollHeight + 100 + "px";
                 button.innerHTML = '<i class="fas fa-chevron-up"></i> إغلاق القائمة';
+                button.classList.add('active');
             } else {
+                box.classList.remove('open');
+                box.style.maxHeight = "0";
                 button.innerHTML = '<i class="fas fa-chevron-down"></i> عرض إنجازات الدورة';
+                button.classList.remove('active');
             }
         }
 
-        // كود البحث
+        // كود البحث السنوي
         const searchInput = document.getElementById('yearSearch');
         const yearSections = document.querySelectorAll('.year-section');
         const noResults = document.getElementById('no-results');
