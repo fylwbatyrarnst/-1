@@ -2,8 +2,11 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أنشطة العشيرة</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/all.min.css">
 </head>
 <body>
     <nav>
@@ -11,22 +14,21 @@
         <ul class="nav-links">
             <li><a href="index.html">الرئيسية</a></li>
             <li><a href="history.html">تاريخنا</a></li>
-            <li><a href="activities.html">الأنشطة</a></li>
+            <li><a href="activities.html" class="active">الأنشطة</a></li>
             <li><a href="leaders.html">القيادة</a></li>
         </ul>
     </nav>
+
     <header class="page-header">
         <h1>ماذا نفعل في العشيرة؟</h1>
+        <p>مغامرات، تعلم، وتطوير للذات</p>
     </header>
-    <section style="padding: 50px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-        <div class="glass-card">
-            <h3>حياة الخلاء</h3>
-            <p>معسكرات خارجية وتدريب على فنون البقاء.</p>
-        </div>
-        <div class="glass-card">
-            <h3>الجانب العلمي</h3>
-            <p>تطبيقات كيميائية وفيزيائية في البيئة الكشفية.</p>
-        </div>
+
+    <section style="padding: 50px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        <div class="glass-card"><h3>حياة الخلاء</h3><p>معسكرات وتخييم.</p></div>
+        <div class="glass-card"><h3>الجانب العلمي</h3><p>تطبيقات كيميائية.</p></div>
     </section>
+
+    <footer>عشيرة جوالة كلية العلوم &copy; 2026</footer>
 </body>
 </html>
