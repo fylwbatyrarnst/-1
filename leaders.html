@@ -1,0 +1,231 @@
+<!--<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مجلس القيادة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">ASU SCIENCE SCOUTS</div>
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="history.html">تاريخنا</a></li>
+            <li><a href="activities.html">الأنشطة</a></li>
+            <li><a href="leaders.html">القيادة</a></li>
+        </ul>
+    </nav>
+    <header class="page-header">
+        <h1>مجلس القيادة الحالي</h1>
+    </header>
+    <section style="padding: 50px 8%; display: flex;; ">
+        <div class="glass-card" style="text-align: center; width: 300px;">
+            <div style="width: 100px; height: 100px; background: #333; border-radius: 50%; margin: 0 auto 15px; border: 2px solid var(--gold);"></div>
+            <h3>ق/ اسم القائد</h3>
+            <p>قائد العشيرة</p>
+            <p style="margin-top: 10px;"><i class="fas fa-phone"></i> 01xxxxxxxxx</p>
+            <p><i class="fas fa-envelope"></i> leader@mail.com</p>
+        </div>
+    </section>
+        
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مجلس القيادة الحالي | جوالة علوم</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/all.min.css">
+    <style>
+        /* حاوية الصفحة */
+        .leadership-wrapper {
+            padding: 50px 8%;
+        }
+
+        /* صف القائد الرئيسي (لوحده فوق) */
+        .top-leader-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .leader-card.main-leader {
+            width: 350px; /* أكبر شوية من الباقي */
+            border: 2px solid var(--gold); /* تمييز بالذهب */
+            background: rgba(241, 196, 15, 0.05);
+        }
+
+        /* صف القادة المساعدين (شبكة تحت بعض) */
+        .sub-leaders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        /* تنسيق الكارت الموحد */
+        .leader-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: 0.4s ease;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--purple);
+        }
+
+        /* الصورة الدائرية بحدود */
+        .img-wrapper {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            padding: 5px;
+            background: var(--dark);
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .leader-info h3 {
+            color: var(--gold);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .leader-info .rank {
+            color: #ccc;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 5px;
+            color: #eee;
+        }
+
+        .contact-info i {
+            color: var(--gold);
+            margin-left: 8px;
+        }
+                .footer{
+            color:#f1c40f ;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ASU SCIENCE SCOUTS</div>
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="history.html">تاريخنا</a></li>
+            <li><a href="activities.html">الأنشطة</a></li>
+            <li><a href="leaders.html">القيادة</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>مجلس القيادة الحالي</h1>
+        <p>الهيكل الإداري لعشيرة الجوالة</p>
+    </header>
+
+    <section class="leadership-wrapper">
+        
+        <div class="top-leader-row">
+            <div class="leader-card main-leader">
+                <div class="img-wrapper" style="width: 160px; height: 160px;">
+                    <img src="main_leader.jpg" alt="قائد العشيرة">
+                </div>
+                <div class="leader-info">
+                    <h3 style="font-size: 1.8rem;">ق/ اسم قائد العشيرة</h3>
+                    <span class="rank">قائد العشيرة</span>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> 01xxxxxxxxx</p>
+                        <p><i class="fas fa-envelope"></i> leader@science.asu.edu.eg</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-leaders-grid">
+            
+            <div class="leader-card">
+                <div class="img-wrapper">
+                    <img src="sub1.jpg" alt="أمين السر">
+                </div>
+                <div class="leader-info">
+                    <h3>ق/ الاسم هنا</h3>
+                    <span class="rank">أمين سر العشيرة</span>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> 01xxxxxxxxx</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="leader-card">
+                <div class="img-wrapper">
+                    <img src="sub2.jpg" alt="أمين الصندوق">
+                </div>
+                <div class="leader-info">
+                    <h3>ق/ الاسم هنا</h3>
+                    <span class="rank">أمين الصندوق</span>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> 01xxxxxxxxx</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="leader-card">
+                <div class="img-wrapper">
+                    <img src="sub3.jpg" alt="مسئول التدريب">
+                </div>
+                <div class="leader-info">
+                    <h3>ق/ الاسم هنا</h3>
+                    <span class="rank">مسئول التدريب</span>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> 01xxxxxxxxx</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="leader-card">
+                <div class="img-wrapper">
+                    <img src="sub4.jpg" alt="مسئول العهدة">
+                </div>
+                <div class="leader-info">
+                    <h3>ق/ الاسم هنا</h3>
+                    <span class="rank">مسئول العهدة</span>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> 01xxxxxxxxx</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer">عشيرة جوالة كلية العلوم - جامعة عين شمس &copy; 2026</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>سجل الشرف التاريخي | بحث السنين</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/all.min.css">
+    <style>
+        .footer{
+            color:#f1c40f ;
+        }
+        /* تنسيق شريط البحث */
+        .search-container {
+            max-width: 600px;
+            margin: -30px auto 50px; /* لرفعه فوق شوية */
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border-radius: 50px;
+            border: 2px solid var(--purple);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 1.1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(241, 196, 15, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        /* تنسيق الأقسام السنوية */
+        .year-section {
+            margin-bottom: 80px;
+            transition: 0.4s ease; /* لحركة ناعمة عند الاختفاء */
+        }
+
+        .year-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .year-header h2 {
+            font-size: 3rem;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        .leaders-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .sub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* الكروت المصغرة */
+        .history-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .history-card img {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            border: 2px solid var(--purple);
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+
+        /* رسالة عند عدم وجود نتائج */
+        #no-results {
+            text-align: center;
+            display: none;
+            padding: 50px;
+            font-size: 1.5rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ASU SCIENCE SCOUTS</div>
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="history.html">تاريخنا</a></li>
+            <li><a href="activities.html">الأنشطة</a></li>
+            <li><a href="leaders.html">القيادة</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>سجل الشرف عبر الأجيال</h1>
+        <p>ابحث عن القادة والإنجازات في تاريخ العشيرة العريق</p>
+    </header>
+
+    <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="yearSearch" class="search-input" placeholder="ابحث بالسنة (مثلاً: 2024)...">
+    </div>
+
+    <section id="history-list" style="padding: 0 8%;">
+        
+        <div class="year-section" data-year="2024">
+            <div class="year-header"><h2>2024</h2></div>
+            <div class="leaders-layout">
+                <div class="history-card" style="border: 2px solid var(--gold); width: 250px;">
+                    <img src="leader2024.jpg" alt="">
+                    <h3 style="color: var(--gold);">ق/ أحمد محمد</h3>
+                    <p>قائد العشيرة</p>
+                </div>
+                <div class="sub-grid">
+                    <div class="history-card"><img src="p1.jpg" alt=""><h4>ق/ علي</h4><p>أمين سر</p></div>
+                    <div class="history-card"><img src="p2.jpg" alt=""><h4>ق/ حسن</h4><p>عهدة</p></div>
+                    <div class="history-card"><img src="p3.jpg" alt=""><h4>ق/ سارة</h4><p>تدريب</p></div>
+                    <div class="history-card"><img src="p4.jpg" alt=""><h4>ق/ منى</h4><p>أنشطة</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="year-section" data-year="2023">
+            <div class="year-header"><h2>2023</h2></div>
+            <div class="leaders-layout">
+                <div class="history-card" style="border: 2px solid var(--gold); width: 250px;">
+                    <img src="leader2023.jpg" alt="">
+                    <h3 style="color: var(--gold);">ق/ محمود حسن</h3>
+                    <p>قائد العشيرة</p>
+                </div>
+                <div class="sub-grid">
+                    <div class="history-card"><img src="p5.jpg" alt=""><h4>ق/ إبراهيم</h4><p>أمين سر</p></div>
+                    <div class="history-card"><img src="p6.jpg" alt=""><h4>ق/ خالد</h4><p>عهدة</p></div>
+                    <div class="history-card"><img src="p7.jpg" alt=""><h4>ق/ دينا</h4><p>تدريب</p></div>
+                    <div class="history-card"><img src="p8.jpg" alt=""><h4>ق/ عادل</h4><p>أنشطة</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="no-results">عذراً، لم يتم العثور على نتائج لهذه السنة!</div>
+
+    </section>
+
+    <footer>
+        <p class="footer">عشيرة جوالة كلية العلوم - جامعة عين شمس &copy; 2026</p>
+    </footer>
+
+    <script>
+        // كود البحث الذكي
+        const searchInput = document.getElementById('yearSearch');
+        const yearSections = document.querySelectorAll('.year-section');
+        const noResults = document.getElementById('no-results');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchText = e.target.value.toLowerCase();
+            let found = false;
+
+            yearSections.forEach(section => {
+                const yearValue = section.getAttribute('data-year');
+                
+                if (yearValue.includes(searchText)) {
+                    section.style.display = 'block';
+                    found = true;
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+
+            // إظهار رسالة "لا توجد نتائج"
+            if (found) {
+                noResults.style.display = 'none';
+            } else {
+                noResults.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
